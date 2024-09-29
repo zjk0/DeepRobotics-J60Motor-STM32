@@ -1,0 +1,15 @@
+"F:\EWARM_8321\arm\bin\armproc.dll" 
+
+"F:\EWARM_8321\arm\bin\armJET.dll" 
+
+"F:\none\Study\Other\my\Deep-J60-Motor\STM32_DeepJ60_test\EWARM\STM32_DeepJ60_test\Exe\STM32_DeepJ60_test.out" 
+
+--plugin="F:\EWARM_8321\arm\bin\armbat.dll" 
+
+--device_macro="F:\EWARM_8321\arm\config\debugger\ST\STM32F4xx.dmac" 
+
+--flash_loader="F:\EWARM_8321\arm\config\flashloader\ST\FlashSTM32F4xxx.board" 
+
+
+
+
