@@ -364,6 +364,9 @@ uint8_t DisableJ60Motor (MotorInformation* Motor) {
  *                 NORMAL: Successfully enable motor
  */
 uint8_t EnableJ60Motor (MotorInformation* Motor, uint8_t MotorID) {
+	
+	
+	
     Motor->ID = MotorID;
     SetNormalCommand(Motor, ENABLE_MOTOR);
 
@@ -798,7 +801,6 @@ uint8_t J60MotorErrorReset (MotorInformation* Motor) {
  * @return none
  */
 void AnalyseJ60MotorReceiveData (void) {
-    for (uint8_t i = 0; i < MOTOR_NUMBER; i++) {
-        ReceiveCanDataToJ60MotorData(&J60Motor[i], &Can);
-    }
+    uint8_t ReceiveMotorID = (CanRxInformation.StdId & 0x1F) - 0x10;
+    ReceiveCanDataToJ60MotorData(&J60Motor[ReceiveMotorID - 1], &Can);
 }
