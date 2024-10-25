@@ -247,7 +247,6 @@ void CAN_FilterConfig (CAN_HandleTypeDef* hcan, CAN_FilterTypeDef* hcan_filter) 
     hcan_filter->FilterMode = CAN_FILTERMODE_IDMASK;
     hcan_filter->FilterScale = CAN_FILTERSCALE_32BIT;
     hcan_filter->FilterActivation = CAN_FILTER_ENABLE;
-    // hcan1_filter.SlaveStartFilterBank = 
 
     HAL_CAN_ConfigFilter(hcan, hcan_filter);
 }

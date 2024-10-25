@@ -7,7 +7,8 @@
 /**
  * ---------------------------- Variable ----------------------------
  */
-MotorInformation J60Motor[MOTOR_NUMBER];  // The information struct of J60-Motor
+MotorInformation J60Motor_CAN1[MOTOR_NUMBER];  // The information struct of J60-Motor in can1 bus
+MotorInformation J60Motor_CAN2[MOTOR_NUMBER];  // The information struct of J60-Motor in can2 bus
 
 /**
  * ---------------------------- Function ----------------------------
@@ -796,11 +797,11 @@ uint8_t J60MotorErrorReset (MotorInformation* Motor) {
 /**
  * @brief Analyse the data returned by motor
  * 
- * @param none
+ * @param Motor: The pointer to the struct to store motor information
  * 
  * @return none
  */
-void AnalyseJ60MotorReceiveData (void) {
+void AnalyseJ60MotorReceiveData (MotorInformation* Motor) {
     uint8_t ReceiveMotorID = (CanRxInformation.StdId & 0x1F) - 0x10;
-    ReceiveCanDataToJ60MotorData(&J60Motor[ReceiveMotorID - 1], &Can);
+    ReceiveCanDataToJ60MotorData(&Motor[ReceiveMotorID - 1], &Can);
 }

@@ -95,7 +95,7 @@ int main(void)
   MX_CAN2_Init();
   /* USER CODE BEGIN 2 */
 
-  EnableJ60Motor(&J60Motor[0], 1, 1);
+  EnableJ60Motor(&J60Motor_CAN1[0], 1, 1);
 //  EnableJ60Motor(&J60Motor[1], 2);
 
   /* USER CODE END 2 */
@@ -105,7 +105,7 @@ int main(void)
   while (1)
   {
     HAL_Delay(1);
-    Flag1 = RunJ60Motor(&J60Motor[0], 0.7, 0, 0, 3, 5, PositionMode);
+    Flag1 = RunJ60Motor(&J60Motor_CAN1[0], 0.7, 0, 0, 3, 5, PositionMode);
 //    HAL_Delay(1);
 //    Flag2 = RunJ60Motor(&J60Motor[1], 0, 4, 0, 0, 5, VelocityMode);
     /* USER CODE END WHILE */

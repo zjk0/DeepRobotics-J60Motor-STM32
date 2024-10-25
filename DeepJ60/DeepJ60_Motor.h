@@ -127,7 +127,8 @@ enum MotorError {
     TemperatureSensorDisconnectedError = (0x01 << 6)
 };
 
-extern MotorInformation J60Motor[MOTOR_NUMBER];  // A struct variable to store motor information
+extern MotorInformation J60Motor_CAN1[MOTOR_NUMBER];  // The information struct of J60-Motor in can1 bus
+extern MotorInformation J60Motor_CAN2[MOTOR_NUMBER];  // The information struct of J60-Motor in can2 bus
 
 /**
  * ---------------------------- Function ----------------------------
@@ -172,4 +173,4 @@ uint8_t GetJ60MotorStatusWord (MotorInformation* Motor);
 uint8_t J60MotorErrorReset (MotorInformation* Motor);
 
 // Analyse received data
-void AnalyseJ60MotorReceiveData (void);
+void AnalyseJ60MotorReceiveData (MotorInformation* Motor);

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.32.1.169/W32 for ARM                  21/Oct/2024  00:07:29
+# IAR ELF Linker V8.32.1.169/W32 for ARM                  25/Oct/2024  20:10:21
 # Copyright 2007-2018 IAR Systems AB.
 #
 #    Output file  =  
@@ -8,7 +8,7 @@
 #    Map file     =  
 #        F:\none\Study\Other\my\Deep-J60-Motor\STM32_DeepJ60_test\EWARM\STM32_DeepJ60_test\List\STM32_DeepJ60_test.map
 #    Command line =  
-#        -f C:\Users\86136\AppData\Local\Temp\EW5E2E.tmp
+#        -f C:\Users\86136\AppData\Local\Temp\EW3A33.tmp
 #        (F:\none\Study\Other\my\Deep-J60-Motor\STM32_DeepJ60_test\EWARM\STM32_DeepJ60_test\Obj\Callback.o
 #        F:\none\Study\Other\my\Deep-J60-Motor\STM32_DeepJ60_test\EWARM\STM32_DeepJ60_test\Obj\can.o
 #        F:\none\Study\Other\my\Deep-J60-Motor\STM32_DeepJ60_test\EWARM\STM32_DeepJ60_test\Obj\DeepJ60_can.o
@@ -83,64 +83,55 @@ initialize by copy { rw };
   .intvec            ro code   0x800'0000   0x188  startup_stm32f407xx.o [1]
                              - 0x800'0188   0x188
 
-"P1":                                      0x2710
-  .text              ro code   0x800'0188   0x8ec  DeepJ60_Motor.o [1]
-  .text              ro code   0x800'0a74   0x1e0  DeepJ60_can.o [1]
-  .text              ro code   0x800'0c54   0x7e2  stm32f4xx_hal_can.o [1]
-  .text              ro code   0x800'1436    0x3a  zero_init3.o [4]
-  .text              ro code   0x800'1470   0x264  can.o [1]
-  .text              ro code   0x800'16d4     0xc  stm32f4xx_hal.o [1]
+"P1":                                      0x2730
+  .text              ro code   0x800'0188   0x8e8  DeepJ60_Motor.o [1]
+  .text              ro code   0x800'0a70   0x1e0  DeepJ60_can.o [1]
+  .text              ro code   0x800'0c50   0x7e2  stm32f4xx_hal_can.o [1]
+  .text              ro code   0x800'1432    0x3a  zero_init3.o [4]
+  .text              ro code   0x800'146c   0x264  can.o [1]
+  .text              ro code   0x800'16d0     0xc  stm32f4xx_hal.o [1]
+  .text              ro code   0x800'16dc     0x2  stm32f4xx_hal_can.o [1]
+  .text              ro code   0x800'16de     0x2  stm32f4xx_hal_can.o [1]
   .text              ro code   0x800'16e0     0x2  stm32f4xx_hal_can.o [1]
   .text              ro code   0x800'16e2     0x2  stm32f4xx_hal_can.o [1]
   .text              ro code   0x800'16e4     0x2  stm32f4xx_hal_can.o [1]
   .text              ro code   0x800'16e6     0x2  stm32f4xx_hal_can.o [1]
   .text              ro code   0x800'16e8     0x2  stm32f4xx_hal_can.o [1]
-  .text              ro code   0x800'16ea     0x2  stm32f4xx_hal_can.o [1]
-  .text              ro code   0x800'16ec     0x2  stm32f4xx_hal_can.o [1]
-  .text              ro code   0x800'16f0    0x24  Callback.o [1]
-  .text              ro code   0x800'1714     0x2  stm32f4xx_hal_can.o [1]
-  .text              ro code   0x800'1716     0x2  stm32f4xx_hal_can.o [1]
-  .text              ro code   0x800'1718     0x2  stm32f4xx_hal_can.o [1]
-  .text              ro code   0x800'171a     0x2  stm32f4xx_hal_can.o [1]
-  .text              ro code   0x800'171c     0x2  stm32f4xx_hal_can.o [1]
-  .text              ro code   0x800'1720   0x108  main.o [1]
-  .text              ro code   0x800'1828     0x6  ABImemclr4.o [4]
-  .text              ro code   0x800'1830   0x274  stm32f4xx_hal_gpio.o [1]
-  .text              ro code   0x800'1aa4   0x15c  stm32f4xx_hal_cortex.o [1]
-  .text              ro code   0x800'1c00    0x34  stm32f4xx_hal.o [1]
-  .text              ro code   0x800'1c34    0x9c  gpio.o [1]
-  .text              ro code   0x800'1cd0    0x28  stm32f4xx_hal.o [1]
-  .text              ro code   0x800'1cf8   0x3ec  stm32f4xx_hal_rcc.o [1]
-  .text              ro code   0x800'20e4   0x1f4  stm32f4xx_hal_rcc.o [1]
-  .text              ro code   0x800'22d8    0x32  ABImemset48.o [4]
-  .text              ro code   0x800'230c    0x4c  stm32f4xx_hal.o [1]
-  .text              ro code   0x800'2358    0x40  stm32f4xx_hal_msp.o [1]
-  .text              ro code   0x800'2398   0x230  I64DivMod.o [4]
-  .text              ro code   0x800'25c8     0x2  I64DivZer.o [4]
-  .text              ro code   0x800'25cc    0x5c  stm32f4xx_it.o [1]
-  .text              ro code   0x800'2628    0x18  stm32f4xx_hal.o [1]
-  .text              ro code   0x800'2640    0x2c  copy_init3.o [4]
-  .text              ro code   0x800'266c    0x28  data_init.o [4]
-  .text              ro code   0x800'2694    0x22  fpinit_M.o [3]
-  .iar.init_table    const     0x800'26b8    0x24  - Linker created -
-  .text              ro code   0x800'26dc    0x1e  cmain.o [4]
-  .text              ro code   0x800'26fa     0x4  low_level_init.o [2]
-  .text              ro code   0x800'26fe     0x4  exit.o [2]
-  .text              ro code   0x800'2704     0xa  cexit.o [4]
-  .text              ro code   0x800'2710    0x14  exit.o [5]
-  .rodata            const     0x800'2724    0x10  system_stm32f4xx.o [1]
-  .text              ro code   0x800'2734    0x10  startup_stm32f407xx.o [1]
-  .text              ro code   0x800'2744    0x10  system_stm32f4xx.o [1]
-  .text              ro code   0x800'2754     0xc  cstartup_M.o [4]
-  Initializer bytes  const     0x800'2760     0xc  <for P2-1>
-  .text              ro code   0x800'276c     0x4  startup_stm32f407xx.o [1]
-  .text              ro code   0x800'2770     0x4  startup_stm32f407xx.o [1]
-  .text              ro code   0x800'2774     0x4  startup_stm32f407xx.o [1]
-  .text              ro code   0x800'2778     0x4  startup_stm32f407xx.o [1]
-  .text              ro code   0x800'277c     0x4  startup_stm32f407xx.o [1]
-  .text              ro code   0x800'2780     0x4  startup_stm32f407xx.o [1]
-  .text              ro code   0x800'2784     0x4  startup_stm32f407xx.o [1]
-  .text              ro code   0x800'2788     0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x800'16ec    0x4c  Callback.o [1]
+  .text              ro code   0x800'1738     0x2  stm32f4xx_hal_can.o [1]
+  .text              ro code   0x800'173a     0x2  stm32f4xx_hal_can.o [1]
+  .text              ro code   0x800'173c     0x2  stm32f4xx_hal_can.o [1]
+  .text              ro code   0x800'173e     0x2  stm32f4xx_hal_can.o [1]
+  .text              ro code   0x800'1740   0x108  main.o [1]
+  .text              ro code   0x800'1848     0x6  ABImemclr4.o [4]
+  .text              ro code   0x800'1850   0x274  stm32f4xx_hal_gpio.o [1]
+  .text              ro code   0x800'1ac4   0x15c  stm32f4xx_hal_cortex.o [1]
+  .text              ro code   0x800'1c20    0x34  stm32f4xx_hal.o [1]
+  .text              ro code   0x800'1c54    0x9c  gpio.o [1]
+  .text              ro code   0x800'1cf0    0x28  stm32f4xx_hal.o [1]
+  .text              ro code   0x800'1d18   0x3ec  stm32f4xx_hal_rcc.o [1]
+  .text              ro code   0x800'2104   0x1f4  stm32f4xx_hal_rcc.o [1]
+  .text              ro code   0x800'22f8    0x32  ABImemset48.o [4]
+  .text              ro code   0x800'232c    0x4c  stm32f4xx_hal.o [1]
+  .text              ro code   0x800'2378    0x40  stm32f4xx_hal_msp.o [1]
+  .text              ro code   0x800'23b8   0x230  I64DivMod.o [4]
+  .text              ro code   0x800'25e8     0x2  I64DivZer.o [4]
+  .text              ro code   0x800'25ec    0x5c  stm32f4xx_it.o [1]
+  .text              ro code   0x800'2648    0x18  stm32f4xx_hal.o [1]
+  .text              ro code   0x800'2660    0x2c  copy_init3.o [4]
+  .text              ro code   0x800'268c    0x28  data_init.o [4]
+  .text              ro code   0x800'26b4    0x22  fpinit_M.o [3]
+  .iar.init_table    const     0x800'26d8    0x24  - Linker created -
+  .text              ro code   0x800'26fc    0x1e  cmain.o [4]
+  .text              ro code   0x800'271a     0x4  low_level_init.o [2]
+  .text              ro code   0x800'271e     0x4  exit.o [2]
+  .text              ro code   0x800'2724     0xa  cexit.o [4]
+  .text              ro code   0x800'2730    0x14  exit.o [5]
+  .rodata            const     0x800'2744    0x10  system_stm32f4xx.o [1]
+  .text              ro code   0x800'2754    0x10  startup_stm32f407xx.o [1]
+  .text              ro code   0x800'2764    0x10  system_stm32f4xx.o [1]
+  .text              ro code   0x800'2774     0xc  cstartup_M.o [4]
+  Initializer bytes  const     0x800'2780     0xc  <for P2-1>
   .text              ro code   0x800'278c     0x4  startup_stm32f407xx.o [1]
   .text              ro code   0x800'2790     0x4  startup_stm32f407xx.o [1]
   .text              ro code   0x800'2794     0x4  startup_stm32f407xx.o [1]
@@ -208,9 +199,17 @@ initialize by copy { rw };
   .text              ro code   0x800'288c     0x4  startup_stm32f407xx.o [1]
   .text              ro code   0x800'2890     0x4  startup_stm32f407xx.o [1]
   .text              ro code   0x800'2894     0x4  startup_stm32f407xx.o [1]
-  .rodata            const     0x800'2898     0x0  zero_init3.o [4]
-  .rodata            const     0x800'2898     0x0  copy_init3.o [4]
-                             - 0x800'2898  0x2710
+  .text              ro code   0x800'2898     0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x800'289c     0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x800'28a0     0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x800'28a4     0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x800'28a8     0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x800'28ac     0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x800'28b0     0x4  startup_stm32f407xx.o [1]
+  .text              ro code   0x800'28b4     0x4  startup_stm32f407xx.o [1]
+  .rodata            const     0x800'28b8     0x0  zero_init3.o [4]
+  .rodata            const     0x800'28b8     0x0  copy_init3.o [4]
+                             - 0x800'28b8  0x2730
 
 "P2", part 1 of 3:                            0xc
   P2-1                        0x2000'0000     0x9  <Init block>
@@ -219,32 +218,33 @@ initialize by copy { rw };
     .data            inited   0x2000'0008     0x1  stm32f4xx_hal.o [1]
                             - 0x2000'0009     0x9
 
-"P2", part 2 of 3:                          0x360
+"P2", part 2 of 3:                          0x5a0
   .bss               zero     0x2000'000c   0x240  DeepJ60_Motor.o [1]
-  .bss               zero     0x2000'024c    0x54  DeepJ60_can.o [1]
-  .bss               zero     0x2000'02a0    0x28  can.o [1]
-  .bss               zero     0x2000'02c8    0x28  can.o [1]
-  .bss               zero     0x2000'02f0    0x28  can.o [1]
-  .bss               zero     0x2000'0318    0x28  can.o [1]
-  .bss               zero     0x2000'0340    0x1c  DeepJ60_can.o [1]
-  .bss               zero     0x2000'035c     0x4  can.o [1]
-  .bss               zero     0x2000'0360     0x4  DeepJ60_can.o [1]
-  .bss               zero     0x2000'0364     0x4  stm32f4xx_hal.o [1]
-  .bss               zero     0x2000'0368     0x1  main.o [1]
-                            - 0x2000'0369   0x35d
+  .bss               zero     0x2000'024c   0x240  DeepJ60_Motor.o [1]
+  .bss               zero     0x2000'048c    0x54  DeepJ60_can.o [1]
+  .bss               zero     0x2000'04e0    0x28  can.o [1]
+  .bss               zero     0x2000'0508    0x28  can.o [1]
+  .bss               zero     0x2000'0530    0x28  can.o [1]
+  .bss               zero     0x2000'0558    0x28  can.o [1]
+  .bss               zero     0x2000'0580    0x1c  DeepJ60_can.o [1]
+  .bss               zero     0x2000'059c     0x4  can.o [1]
+  .bss               zero     0x2000'05a0     0x4  DeepJ60_can.o [1]
+  .bss               zero     0x2000'05a4     0x4  stm32f4xx_hal.o [1]
+  .bss               zero     0x2000'05a8     0x1  main.o [1]
+                            - 0x2000'05a9   0x59d
 
 "P2", part 3 of 3:                          0x400
-  CSTACK                      0x2000'0370   0x400  <Block>
-    CSTACK           uninit   0x2000'0370   0x400  <Block tail>
-                            - 0x2000'0770   0x400
+  CSTACK                      0x2000'05b0   0x400  <Block>
+    CSTACK           uninit   0x2000'05b0   0x400  <Block tail>
+                            - 0x2000'09b0   0x400
 
 Unused ranges:
 
          From           To      Size
          ----           --      ----
-   0x800'2898   0x80f'ffff  0xf'd768
-  0x2000'036c  0x2000'036f       0x4
-  0x2000'0770  0x2001'ffff  0x1'f890
+   0x800'28b8   0x80f'ffff  0xf'd748
+  0x2000'05ac  0x2000'05af       0x4
+  0x2000'09b0  0x2001'ffff  0x1'f650
 
 
 *******************************************************************************
@@ -254,12 +254,12 @@ Unused ranges:
           Address      Size
           -------      ----
 Zero (__iar_zero_init3)
-    1 destination range, total size 0x35d:
-          0x2000'000c  0x35d
+    1 destination range, total size 0x59d:
+          0x2000'000c  0x59d
 
 Copy (__iar_copy_init3)
     1 source range, total size 0xc (133% of destination):
-           0x800'2760    0xc
+           0x800'2780    0xc
     1 destination range, total size 0x9:
           0x2000'0000    0x9
 
@@ -276,15 +276,15 @@ command line/config:
     Total:
 
 F:\none\Study\Other\my\Deep-J60-Motor\STM32_DeepJ60_test\EWARM\STM32_DeepJ60_test\Obj: [1]
-    Callback.o                   36
-    DeepJ60_Motor.o           2 284               576
+    Callback.o                   76
+    DeepJ60_Motor.o           2 280             1 152
     DeepJ60_can.o               480               116
     can.o                       612               164
     gpio.o                      156
     main.o                      264                 1
     startup_stm32f407xx.o       708
     stm32f4xx_hal.o             204        5        9
-    stm32f4xx_hal_can.o       2 042
+    stm32f4xx_hal_can.o       2 040
     stm32f4xx_hal_cortex.o      348
     stm32f4xx_hal_gpio.o        628
     stm32f4xx_hal_msp.o          64
@@ -292,7 +292,7 @@ F:\none\Study\Other\my\Deep-J60-Motor\STM32_DeepJ60_test\EWARM\STM32_DeepJ60_tes
     stm32f4xx_it.o               92
     system_stm32f4xx.o           16       20        4
     -------------------------------------------------
-    Total:                    9 438       25      870
+    Total:                    9 472       25    1 446
 
 dl7M_tln.a: [2]
     exit.o                        4
@@ -324,10 +324,10 @@ shb_l.a: [5]
     -------------------------------------------------
     Total:                       20
 
-    Gaps                         14        2
+    Gaps                         12        2
     Linker created                        39    1 024
 -----------------------------------------------------
-    Grand Total:             10 326       66    1 894
+    Grand Total:             10 358       66    2 470
 
 
 *******************************************************************************
@@ -336,76 +336,79 @@ shb_l.a: [5]
 
 Entry                       Address   Size  Type      Object
 -----                       -------   ----  ----      ------
-.iar.init_table$$Base    0x800'26b8          --   Gb  - Linker created -
-.iar.init_table$$Limit   0x800'26dc          --   Gb  - Linker created -
-?main                    0x800'26dd         Code  Gb  cmain.o [4]
-AHBPrescTable            0x800'2724   0x10  Data  Gb  system_stm32f4xx.o [1]
+.iar.init_table$$Base    0x800'26d8          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'26fc          --   Gb  - Linker created -
+?main                    0x800'26fd         Code  Gb  cmain.o [4]
+AHBPrescTable            0x800'2744   0x10  Data  Gb  system_stm32f4xx.o [1]
 AnalyseJ60MotorReceiveData
                          0x800'0a3f   0x26  Code  Gb  DeepJ60_Motor.o [1]
-BusFault_Handler         0x800'25d3    0x2  Code  Gb  stm32f4xx_it.o [1]
-CAN1_RX0_IRQHandler      0x800'25ef    0xa  Code  Gb  stm32f4xx_it.o [1]
-CAN1_RX1_IRQHandler      0x800'25f9    0xa  Code  Gb  stm32f4xx_it.o [1]
-CAN1_TX_IRQHandler       0x800'25e5    0xa  Code  Gb  stm32f4xx_it.o [1]
-CAN2_RX0_IRQHandler      0x800'260d    0xa  Code  Gb  stm32f4xx_it.o [1]
-CAN2_RX1_IRQHandler      0x800'2617    0xa  Code  Gb  stm32f4xx_it.o [1]
-CAN2_TX_IRQHandler       0x800'2603    0xa  Code  Gb  stm32f4xx_it.o [1]
-CAN_FilterConfig         0x800'16a1   0x34  Code  Gb  can.o [1]
-CSTACK$$Base            0x2000'0370          --   Gb  - Linker created -
-CSTACK$$Limit           0x2000'0770          --   Gb  - Linker created -
-Can                     0x2000'024c   0x54  Data  Gb  DeepJ60_can.o [1]
-CanDataToRealData        0x800'0ae7   0x2a  Code  Gb  DeepJ60_can.o [1]
-CanRxInformation        0x2000'0340   0x1c  Data  Gb  DeepJ60_can.o [1]
-Can_Receive              0x800'0bc3   0x80  Code  Gb  DeepJ60_can.o [1]
-Can_Send                 0x800'0b11   0xb2  Code  Gb  DeepJ60_can.o [1]
-DebugMon_Handler         0x800'25d9    0x2  Code  Gb  stm32f4xx_it.o [1]
+BusFault_Handler         0x800'25f3    0x2  Code  Gb  stm32f4xx_it.o [1]
+CAN1_RX0_IRQHandler      0x800'260f    0xa  Code  Gb  stm32f4xx_it.o [1]
+CAN1_RX1_IRQHandler      0x800'2619    0xa  Code  Gb  stm32f4xx_it.o [1]
+CAN1_TX_IRQHandler       0x800'2605    0xa  Code  Gb  stm32f4xx_it.o [1]
+CAN2_RX0_IRQHandler      0x800'262d    0xa  Code  Gb  stm32f4xx_it.o [1]
+CAN2_RX1_IRQHandler      0x800'2637    0xa  Code  Gb  stm32f4xx_it.o [1]
+CAN2_TX_IRQHandler       0x800'2623    0xa  Code  Gb  stm32f4xx_it.o [1]
+CAN_FilterConfig         0x800'169d   0x34  Code  Gb  can.o [1]
+CSTACK$$Base            0x2000'05b0          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'09b0          --   Gb  - Linker created -
+Can                     0x2000'048c   0x54  Data  Gb  DeepJ60_can.o [1]
+CanDataToRealData        0x800'0ae3   0x2a  Code  Gb  DeepJ60_can.o [1]
+CanRxInformation        0x2000'0580   0x1c  Data  Gb  DeepJ60_can.o [1]
+Can_Receive              0x800'0bbf   0x80  Code  Gb  DeepJ60_can.o [1]
+Can_Send                 0x800'0b0d   0xb2  Code  Gb  DeepJ60_can.o [1]
+DebugMon_Handler         0x800'25f9    0x2  Code  Gb  stm32f4xx_it.o [1]
 EnableJ60Motor           0x800'0575   0x42  Code  Gb  DeepJ60_Motor.o [1]
-Error_Handler            0x800'1825    0x4  Code  Gb  main.o [1]
-Flag1                   0x2000'0368    0x1  Data  Gb  main.o [1]
+Error_Handler            0x800'1845    0x4  Code  Gb  main.o [1]
+Flag1                   0x2000'05a8    0x1  Data  Gb  main.o [1]
 GetJ60MotorCanID         0x800'0561    0xe  Code  Gb  DeepJ60_Motor.o [1]
 HAL_CAN_ActivateNotification
-                         0x800'11df   0x34  Code  Gb  stm32f4xx_hal_can.o [1]
-HAL_CAN_AddTxMessage     0x800'0f49  0x126  Code  Gb  stm32f4xx_hal_can.o [1]
-HAL_CAN_ConfigFilter     0x800'0dc1  0x128  Code  Gb  stm32f4xx_hal_can.o [1]
-HAL_CAN_GetRxMessage     0x800'106f  0x170  Code  Gb  stm32f4xx_hal_can.o [1]
-HAL_CAN_IRQHandler       0x800'1213  0x224  Code  Gb  stm32f4xx_hal_can.o [1]
-HAL_CAN_Init             0x800'0c55  0x16c  Code  Gb  stm32f4xx_hal_can.o [1]
-HAL_CAN_MspInit          0x800'1521  0x152  Code  Gb  can.o [1]
+                         0x800'11db   0x34  Code  Gb  stm32f4xx_hal_can.o [1]
+HAL_CAN_AddTxMessage     0x800'0f45  0x126  Code  Gb  stm32f4xx_hal_can.o [1]
+HAL_CAN_ConfigFilter     0x800'0dbd  0x128  Code  Gb  stm32f4xx_hal_can.o [1]
+HAL_CAN_GetRxMessage     0x800'106b  0x170  Code  Gb  stm32f4xx_hal_can.o [1]
+HAL_CAN_IRQHandler       0x800'120f  0x224  Code  Gb  stm32f4xx_hal_can.o [1]
+HAL_CAN_Init             0x800'0c51  0x16c  Code  Gb  stm32f4xx_hal_can.o [1]
+HAL_CAN_MspInit          0x800'151d  0x152  Code  Gb  can.o [1]
 HAL_CAN_RxFifo0MsgPendingCallback
-                         0x800'16f1   0x24  Code  Gb  Callback.o [1]
-HAL_CAN_Start            0x800'0ee9   0x5c  Code  Gb  stm32f4xx_hal_can.o [1]
-HAL_Delay                0x800'1cd1   0x28  Code  Wk  stm32f4xx_hal.o [1]
-HAL_GPIO_Init            0x800'1831  0x222  Code  Gb  stm32f4xx_hal_gpio.o [1]
-HAL_GPIO_WritePin        0x800'1a53   0x1a  Code  Gb  stm32f4xx_hal_gpio.o [1]
-HAL_GetTick              0x800'16d5    0xc  Code  Wk  stm32f4xx_hal.o [1]
-HAL_IncTick              0x800'2629   0x18  Code  Wk  stm32f4xx_hal.o [1]
-HAL_Init                 0x800'1c01   0x30  Code  Gb  stm32f4xx_hal.o [1]
-HAL_InitTick             0x800'230d   0x4c  Code  Wk  stm32f4xx_hal.o [1]
-HAL_MspInit              0x800'2359   0x40  Code  Gb  stm32f4xx_hal_msp.o [1]
-HAL_NVIC_EnableIRQ       0x800'1bc7    0xe  Code  Gb  stm32f4xx_hal_cortex.o [1]
-HAL_NVIC_SetPriority     0x800'1b9d   0x2a  Code  Gb  stm32f4xx_hal_cortex.o [1]
+                         0x800'16ed   0x1c  Code  Gb  Callback.o [1]
+HAL_CAN_RxFifo1MsgPendingCallback
+                         0x800'1709   0x1c  Code  Gb  Callback.o [1]
+HAL_CAN_Start            0x800'0ee5   0x5c  Code  Gb  stm32f4xx_hal_can.o [1]
+HAL_Delay                0x800'1cf1   0x28  Code  Wk  stm32f4xx_hal.o [1]
+HAL_GPIO_Init            0x800'1851  0x222  Code  Gb  stm32f4xx_hal_gpio.o [1]
+HAL_GPIO_WritePin        0x800'1a73   0x1a  Code  Gb  stm32f4xx_hal_gpio.o [1]
+HAL_GetTick              0x800'16d1    0xc  Code  Wk  stm32f4xx_hal.o [1]
+HAL_IncTick              0x800'2649   0x18  Code  Wk  stm32f4xx_hal.o [1]
+HAL_Init                 0x800'1c21   0x30  Code  Gb  stm32f4xx_hal.o [1]
+HAL_InitTick             0x800'232d   0x4c  Code  Wk  stm32f4xx_hal.o [1]
+HAL_MspInit              0x800'2379   0x40  Code  Gb  stm32f4xx_hal_msp.o [1]
+HAL_NVIC_EnableIRQ       0x800'1be7    0xe  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HAL_NVIC_SetPriority     0x800'1bbd   0x2a  Code  Gb  stm32f4xx_hal_cortex.o [1]
 HAL_NVIC_SetPriorityGrouping
-                         0x800'1b91    0xc  Code  Gb  stm32f4xx_hal_cortex.o [1]
+                         0x800'1bb1    0xc  Code  Gb  stm32f4xx_hal_cortex.o [1]
 HAL_RCC_CAN1_CLK_ENABLED
-                        0x2000'035c    0x4  Data  Lc  can.o [1]
-HAL_RCC_ClockConfig      0x800'20e5  0x140  Code  Gb  stm32f4xx_hal_rcc.o [1]
-HAL_RCC_OscConfig        0x800'1cf9  0x3ec  Code  Wk  stm32f4xx_hal_rcc.o [1]
-HAL_SYSTICK_Config       0x800'1bd5    0xc  Code  Gb  stm32f4xx_hal_cortex.o [1]
-HardFault_Handler        0x800'25cf    0x2  Code  Gb  stm32f4xx_it.o [1]
-J60Motor                0x2000'000c  0x240  Data  Gb  DeepJ60_Motor.o [1]
+                        0x2000'059c    0x4  Data  Lc  can.o [1]
+HAL_RCC_ClockConfig      0x800'2105  0x140  Code  Gb  stm32f4xx_hal_rcc.o [1]
+HAL_RCC_OscConfig        0x800'1d19  0x3ec  Code  Wk  stm32f4xx_hal_rcc.o [1]
+HAL_SYSTICK_Config       0x800'1bf5    0xc  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HardFault_Handler        0x800'25ef    0x2  Code  Gb  stm32f4xx_it.o [1]
 J60MotorConfigToSendCanData
                          0x800'042d   0x28  Code  Gb  DeepJ60_Motor.o [1]
 J60MotorDataToSendCanData
                          0x800'04dd   0x34  Code  Gb  DeepJ60_Motor.o [1]
 J60MotorMotionDataToSendCanData
                          0x800'0299   0xae  Code  Gb  DeepJ60_Motor.o [1]
-MX_CAN1_Init             0x800'1471   0x58  Code  Gb  can.o [1]
-MX_CAN2_Init             0x800'14c9   0x58  Code  Gb  can.o [1]
-MX_GPIO_Init             0x800'1c35   0x9c  Code  Gb  gpio.o [1]
-MemManage_Handler        0x800'25d1    0x2  Code  Gb  stm32f4xx_it.o [1]
-NMI_Handler              0x800'25cd    0x2  Code  Gb  stm32f4xx_it.o [1]
-NVIC_EncodePriority      0x800'1b21   0x40  Code  Lc  stm32f4xx_hal_cortex.o [1]
-PendSV_Handler           0x800'25db    0x2  Code  Gb  stm32f4xx_it.o [1]
-RealDataToCanData        0x800'0abd   0x2a  Code  Gb  DeepJ60_can.o [1]
+J60Motor_CAN1           0x2000'000c  0x240  Data  Gb  DeepJ60_Motor.o [1]
+J60Motor_CAN2           0x2000'024c  0x240  Data  Gb  DeepJ60_Motor.o [1]
+MX_CAN1_Init             0x800'146d   0x58  Code  Gb  can.o [1]
+MX_CAN2_Init             0x800'14c5   0x58  Code  Gb  can.o [1]
+MX_GPIO_Init             0x800'1c55   0x9c  Code  Gb  gpio.o [1]
+MemManage_Handler        0x800'25f1    0x2  Code  Gb  stm32f4xx_it.o [1]
+NMI_Handler              0x800'25ed    0x2  Code  Gb  stm32f4xx_it.o [1]
+NVIC_EncodePriority      0x800'1b41   0x40  Code  Lc  stm32f4xx_hal_cortex.o [1]
+PendSV_Handler           0x800'25fb    0x2  Code  Gb  stm32f4xx_it.o [1]
+RealDataToCanData        0x800'0ab9   0x2a  Code  Gb  DeepJ60_can.o [1]
 ReceiveCanDataToJ60MotorConfig
                          0x800'0455   0x28  Code  Gb  DeepJ60_Motor.o [1]
 ReceiveCanDataToJ60MotorData
@@ -416,8 +419,8 @@ ReceiveCommandStatusToJ60MotorCommandStatus
                          0x800'047d    0x6  Code  Gb  DeepJ60_Motor.o [1]
 ReceiveStatusWordToJ60MotorStatusWord
                          0x800'0483   0x5a  Code  Gb  DeepJ60_Motor.o [1]
-Region$$Table$$Base      0x800'26b8          --   Gb  - Linker created -
-Region$$Table$$Limit     0x800'26dc          --   Gb  - Linker created -
+Region$$Table$$Base      0x800'26d8          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'26fc          --   Gb  - Linker created -
 RunJ60Motor              0x800'0905  0x13a  Code  Gb  DeepJ60_Motor.o [1]
 RunJ60MotorKdMode        0x800'0701   0x62  Code  Gb  DeepJ60_Motor.o [1]
 RunJ60MotorPositionMode
@@ -433,49 +436,49 @@ RunJ60MotorVelocityTorqueMode
                          0x800'0829   0x68  Code  Gb  DeepJ60_Motor.o [1]
 RunJ60MotorZeroTorqueMode
                          0x800'0765   0x56  Code  Gb  DeepJ60_Motor.o [1]
-SVC_Handler              0x800'25d7    0x2  Code  Gb  stm32f4xx_it.o [1]
+SVC_Handler              0x800'25f7    0x2  Code  Gb  stm32f4xx_it.o [1]
 SetMotionCommand         0x800'0243   0x4e  Code  Gb  DeepJ60_Motor.o [1]
 SetMotionParameters      0x800'01a1   0xa2  Code  Gb  DeepJ60_Motor.o [1]
 SetNormalCommand         0x800'0291    0x8  Code  Gb  DeepJ60_Motor.o [1]
-StartCan                 0x800'0a75   0x48  Code  Gb  DeepJ60_can.o [1]
+StartCan                 0x800'0a71   0x48  Code  Gb  DeepJ60_can.o [1]
 StartJ60MotorCommand     0x800'0189   0x18  Code  Gb  DeepJ60_Motor.o [1]
-SysTick_Config           0x800'1b61   0x30  Code  Lc  stm32f4xx_hal_cortex.o [1]
-SysTick_Handler          0x800'25dd    0x8  Code  Gb  stm32f4xx_it.o [1]
-SystemClock_Config       0x800'176b   0xa2  Code  Gb  main.o [1]
+SysTick_Config           0x800'1b81   0x30  Code  Lc  stm32f4xx_hal_cortex.o [1]
+SysTick_Handler          0x800'25fd    0x8  Code  Gb  stm32f4xx_it.o [1]
+SystemClock_Config       0x800'178b   0xa2  Code  Gb  main.o [1]
 SystemCoreClock         0x2000'0004    0x4  Data  Gb  system_stm32f4xx.o [1]
-SystemInit               0x800'2745    0xc  Code  Gb  system_stm32f4xx.o [1]
-TxMailBox               0x2000'0360    0x4  Data  Gb  DeepJ60_can.o [1]
-UsageFault_Handler       0x800'25d5    0x2  Code  Gb  stm32f4xx_it.o [1]
-__NVIC_EnableIRQ         0x800'1ad5   0x20  Code  Lc  stm32f4xx_hal_cortex.o [1]
+SystemInit               0x800'2765    0xc  Code  Gb  system_stm32f4xx.o [1]
+TxMailBox               0x2000'05a0    0x4  Data  Gb  DeepJ60_can.o [1]
+UsageFault_Handler       0x800'25f5    0x2  Code  Gb  stm32f4xx_it.o [1]
+__NVIC_EnableIRQ         0x800'1af5   0x20  Code  Lc  stm32f4xx_hal_cortex.o [1]
 __NVIC_GetPriorityGrouping
-                         0x800'1ac7    0xc  Code  Lc  stm32f4xx_hal_cortex.o [1]
-__NVIC_SetPriority       0x800'1af5   0x2c  Code  Lc  stm32f4xx_hal_cortex.o [1]
+                         0x800'1ae7    0xc  Code  Lc  stm32f4xx_hal_cortex.o [1]
+__NVIC_SetPriority       0x800'1b15   0x2c  Code  Lc  stm32f4xx_hal_cortex.o [1]
 __NVIC_SetPriorityGrouping
-                         0x800'1aa5   0x22  Code  Lc  stm32f4xx_hal_cortex.o [1]
-__aeabi_ldiv0            0x800'25c9         Code  Gb  I64DivZer.o [4]
-__aeabi_memclr4          0x800'1829         Code  Gb  ABImemclr4.o [4]
-__aeabi_uldivmod         0x800'2399         Code  Gb  I64DivMod.o [4]
-__cmain                  0x800'26dd         Code  Gb  cmain.o [4]
-__exit                   0x800'2711   0x14  Code  Gb  exit.o [5]
-__iar_Memset4_word       0x800'22d9         Code  Gb  ABImemset48.o [4]
-__iar_Memset8_word       0x800'22d9         Code  Gb  ABImemset48.o [4]
-__iar_copy_init3         0x800'2641   0x2c  Code  Gb  copy_init3.o [4]
-__iar_data_init3         0x800'266d   0x28  Code  Gb  data_init.o [4]
-__iar_init_vfp           0x800'2695         Code  Gb  fpinit_M.o [3]
-__iar_program_start      0x800'2755         Code  Gb  cstartup_M.o [4]
-__iar_zero_init3         0x800'1437   0x3a  Code  Gb  zero_init3.o [4]
-__low_level_init         0x800'26fb    0x4  Code  Gb  low_level_init.o [2]
+                         0x800'1ac5   0x22  Code  Lc  stm32f4xx_hal_cortex.o [1]
+__aeabi_ldiv0            0x800'25e9         Code  Gb  I64DivZer.o [4]
+__aeabi_memclr4          0x800'1849         Code  Gb  ABImemclr4.o [4]
+__aeabi_uldivmod         0x800'23b9         Code  Gb  I64DivMod.o [4]
+__cmain                  0x800'26fd         Code  Gb  cmain.o [4]
+__exit                   0x800'2731   0x14  Code  Gb  exit.o [5]
+__iar_Memset4_word       0x800'22f9         Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word       0x800'22f9         Code  Gb  ABImemset48.o [4]
+__iar_copy_init3         0x800'2661   0x2c  Code  Gb  copy_init3.o [4]
+__iar_data_init3         0x800'268d   0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp           0x800'26b5         Code  Gb  fpinit_M.o [3]
+__iar_program_start      0x800'2775         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3         0x800'1433   0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init         0x800'271b    0x4  Code  Gb  low_level_init.o [2]
 __vector_table           0x800'0000         Data  Gb  startup_stm32f407xx.o [1]
-_call_main               0x800'26e9         Code  Gb  cmain.o [4]
-_exit                    0x800'2705         Code  Gb  cexit.o [4]
-_main                    0x800'26f7         Code  Gb  cmain.o [4]
-exit                     0x800'26ff    0x4  Code  Gb  exit.o [2]
-hcan1                   0x2000'02f0   0x28  Data  Gb  can.o [1]
-hcan1_filter            0x2000'02a0   0x28  Data  Gb  can.o [1]
-hcan2                   0x2000'0318   0x28  Data  Gb  can.o [1]
-hcan2_filter            0x2000'02c8   0x28  Data  Gb  can.o [1]
-main                     0x800'1721   0x4a  Code  Gb  main.o [1]
-uwTick                  0x2000'0364    0x4  Data  Gb  stm32f4xx_hal.o [1]
+_call_main               0x800'2709         Code  Gb  cmain.o [4]
+_exit                    0x800'2725         Code  Gb  cexit.o [4]
+_main                    0x800'2717         Code  Gb  cmain.o [4]
+exit                     0x800'271f    0x4  Code  Gb  exit.o [2]
+hcan1                   0x2000'0530   0x28  Data  Gb  can.o [1]
+hcan1_filter            0x2000'04e0   0x28  Data  Gb  can.o [1]
+hcan2                   0x2000'0558   0x28  Data  Gb  can.o [1]
+hcan2_filter            0x2000'0508   0x28  Data  Gb  can.o [1]
+main                     0x800'1741   0x4a  Code  Gb  main.o [1]
+uwTick                  0x2000'05a4    0x4  Data  Gb  stm32f4xx_hal.o [1]
 uwTickFreq              0x2000'0008    0x1  Data  Gb  stm32f4xx_hal.o [1]
 uwTickPrio              0x2000'0000    0x4  Data  Gb  stm32f4xx_hal.o [1]
 
@@ -486,9 +489,9 @@ uwTickPrio              0x2000'0000    0x4  Data  Gb  stm32f4xx_hal.o [1]
 [4] = rt7M_tl.a
 [5] = shb_l.a
 
-  10 326 bytes of readonly  code memory
+  10 358 bytes of readonly  code memory
       66 bytes of readonly  data memory
-   1 894 bytes of readwrite data memory
+   2 470 bytes of readwrite data memory
 
 Errors: none
 Warnings: none
