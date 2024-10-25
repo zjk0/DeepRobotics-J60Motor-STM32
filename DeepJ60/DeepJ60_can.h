@@ -181,9 +181,9 @@ extern CanRxStruct CanRxInformation;  // Store received data in can bus
 /**
  * ---------------------------- Function ----------------------------
  */
-uint8_t StartCan (CanHandle* hcan);
-uint8_t StopCan (CanHandle* hcan);
+uint8_t StartCan (uint8_t CanNum);
+uint8_t StopCan (uint8_t CanNum);
 uint32_t RealDataToCanData (float RealData, float MinRealData, float MaxRealData, uint32_t DataBitNum);
 float CanDataToRealData (uint32_t CanData, float MinRealData, float MaxRealData, uint32_t DataBitNum);
-uint8_t Can_Send (CanFrame* Can, CanHandle* hcan);
+uint8_t Can_Send (CanFrame* Can, uint8_t CanNum);
 uint8_t Can_Receive (CanFrame* Can, CanHandle* hcan);

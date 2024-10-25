@@ -4,7 +4,7 @@
 #include "stm32f4xx_hal_can.h"
 
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
-    if (hcan->Instance == CAN1) {
+    if (hcan->Instance == CAN1 || hcan->Instance == CAN2) {
         Can_Receive(&Can, hcan);
         AnalyseJ60MotorReceiveData();
     }

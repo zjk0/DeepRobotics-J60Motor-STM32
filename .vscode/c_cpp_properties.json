@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "F:/none/Study/Electron/Embedded/Chip/STM32/resource/STlibrary/HAL/Resource House/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Inc",
+                "F:/none/Study/Other/my/Deep-J60-Motor/DeepJ60"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerPath": "D:/mingw64/bin/gcc.exe"
+        }
+    ],
+    "version": 4
+}

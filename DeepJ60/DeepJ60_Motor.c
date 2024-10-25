@@ -15,12 +15,12 @@ MotorInformation J60Motor[MOTOR_NUMBER];  // The information struct of J60-Motor
 /**
  * @brief Start to transmit command to motor by can bus
  * 
- * @param none
+ * @param Motor: The pointer to the struct to store motor information
  * 
  * @return none
  */
-uint8_t StartJ60MotorCommand (void) {
-    if (StartCan(&hcan1) == CAN_ERROR) {
+uint8_t StartJ60MotorCommand (MotorInformation* Motor) {
+    if (StartCan(Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -29,12 +29,12 @@ uint8_t StartJ60MotorCommand (void) {
 /**
  * @brief Stop transmitting command to motor
  * 
- * @param none
+ * @param Motor: The pointer to the struct to store motor information
  * 
  * @return none
  */
-uint8_t StopJ60MotorCommand (void) {
-    if (StopCan(&hcan1) == CAN_ERROR) {
+uint8_t StopJ60MotorCommand (MotorInformation* Motor) {
+    if (StopCan(Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -346,11 +346,11 @@ uint8_t DisableJ60Motor (MotorInformation* Motor) {
     Can.ID = GetJ60MotorCanID(&Motor->MotorCommand);
     Can.DLC = SEND_DLC_DISABLE_MOTOR;
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
 
-    StopJ60MotorCommand();
+    StopJ60MotorCommand(Motor);
     return NORMAL;
 }
 
@@ -359,25 +359,25 @@ uint8_t DisableJ60Motor (MotorInformation* Motor) {
  * 
  * @param Motor: The pointer to the struct to store motor information
  * @param MotorID: The ID of motor
+ * @param CanNum: Decide which can bus the motor is on
  * 
  * @return uint8_t ERROR: Error happened while enabling motor
  *                 NORMAL: Successfully enable motor
  */
-uint8_t EnableJ60Motor (MotorInformation* Motor, uint8_t MotorID) {
-	
-	
-	
+uint8_t EnableJ60Motor (MotorInformation* Motor, uint8_t MotorID, uint8_t CanNum) {
     Motor->ID = MotorID;
+    Motor->CanNum = CanNum;
     SetNormalCommand(Motor, ENABLE_MOTOR);
 
     Can.ID = GetJ60MotorCanID(&Motor->MotorCommand);
     Can.DLC = SEND_DLC_ENABLE_MOTOR;
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    StartJ60MotorCommand(Motor);
+
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
 
-    StartJ60MotorCommand();
     return NORMAL;
 }
 
@@ -395,7 +395,7 @@ uint8_t GetJ60MotorConfig (MotorInformation* Motor) {
     Can.ID = GetJ60MotorCanID(&Motor->MotorCommand);
     Can.DLC = SEND_DLC_GET_CONFIG;
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -421,7 +421,7 @@ uint8_t ConfigJ60MotorCanTimeout (MotorInformation* Motor, int CanTimeout) {
     Can.DLC = SEND_DLC_SET_CAN_TIMEOUT;
     J60MotorDataToSendCanData(Motor, &Can);
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -447,7 +447,7 @@ uint8_t ConfigJ60MotorCurrentBandWidth (MotorInformation* Motor, int CurrentBand
     Can.DLC = SEND_DLC_SET_BANDWIDTH;
     J60MotorDataToSendCanData(Motor, &Can);
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -467,7 +467,7 @@ uint8_t SaveJ60MotorConfig (MotorInformation* Motor) {
     Can.ID = GetJ60MotorCanID(&Motor->MotorCommand);
     Can.DLC = SEND_DLC_SAVE_CONFIG;
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -493,7 +493,7 @@ uint8_t RunJ60MotorPositionMode (MotorInformation* Motor, float Position, float 
     Can.DLC = SEND_DLC_CONTROL_MOTOR;
     J60MotorDataToSendCanData(Motor, &Can);
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -518,7 +518,7 @@ uint8_t RunJ60MotorVelocityMode (MotorInformation* Motor, float Velocity, float 
     Can.DLC = SEND_DLC_CONTROL_MOTOR;
     J60MotorDataToSendCanData(Motor, &Can);
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -542,7 +542,7 @@ uint8_t RunJ60MotorTorqueMode (MotorInformation* Motor, float Torque) {
     Can.DLC = SEND_DLC_CONTROL_MOTOR;
     J60MotorDataToSendCanData(Motor, &Can);
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -566,7 +566,7 @@ uint8_t RunJ60MotorKdMode (MotorInformation* Motor, float Kd) {
     Can.DLC = SEND_DLC_CONTROL_MOTOR;
     J60MotorDataToSendCanData(Motor, &Can);
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -589,7 +589,7 @@ uint8_t RunJ60MotorZeroTorqueMode (MotorInformation* Motor) {
     Can.DLC = SEND_DLC_CONTROL_MOTOR;
     J60MotorDataToSendCanData(Motor, &Can);
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -616,7 +616,7 @@ uint8_t RunJ60MotorPositionTorqueMode (MotorInformation* Motor, float Position, 
     Can.DLC = SEND_DLC_CONTROL_MOTOR;
     J60MotorDataToSendCanData(Motor, &Can);
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -642,7 +642,7 @@ uint8_t RunJ60MotorVelocityTorqueMode (MotorInformation* Motor, float Velocity, 
     Can.DLC = SEND_DLC_CONTROL_MOTOR;
     J60MotorDataToSendCanData(Motor, &Can);
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -670,7 +670,7 @@ uint8_t RunJ60MotorPositonVelocityTorqueMode (MotorInformation* Motor, float Pos
     Can.DLC = SEND_DLC_CONTROL_MOTOR;
     J60MotorDataToSendCanData(Motor, &Can);
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -767,7 +767,7 @@ uint8_t GetJ60MotorStatusWord (MotorInformation* Motor) {
     Can.ID = GetJ60MotorCanID(&Motor->MotorCommand);
     Can.DLC = SEND_DLC_GET_STATUS_WORD;
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;
@@ -787,7 +787,7 @@ uint8_t J60MotorErrorReset (MotorInformation* Motor) {
     Can.ID = GetJ60MotorCanID(&Motor->MotorCommand);
     Can.DLC = SEND_DLC_ERROR_RESET;
 
-    if (Can_Send(&Can, &hcan1) == CAN_ERROR) {
+    if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
     }
     return NORMAL;

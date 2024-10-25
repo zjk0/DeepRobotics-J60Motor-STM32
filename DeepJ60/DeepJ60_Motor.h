@@ -91,6 +91,7 @@ typedef struct {
     uint16_t MotorStatusWord;
     uint8_t MotorCommandStatus;
     uint8_t MotorMode;
+    uint8_t CanNum;
 } MotorInformation;
 
 /**
@@ -132,8 +133,8 @@ extern MotorInformation J60Motor[MOTOR_NUMBER];  // A struct variable to store m
  * ---------------------------- Function ----------------------------
  */
 // Start or stop command
-uint8_t StartJ60MotorCommand (void);
-uint8_t StopJ60MotorCommand (void);
+uint8_t StartJ60MotorCommand (MotorInformation* Motor);
+uint8_t StopJ60MotorCommand (MotorInformation* Motor);
 
 // Set parameters
 uint8_t SetMotionParameters (MotorInformation* Motor, float Position, float Velocity, float Kp, float Kd, float Torque);
@@ -153,7 +154,7 @@ uint16_t GetJ60MotorCanID (MotorCommandInformation* MotorCommand);
 
 // Give motor command
 uint8_t DisableJ60Motor (MotorInformation* Motor);
-uint8_t EnableJ60Motor (MotorInformation* Motor, uint8_t MotorID);
+uint8_t EnableJ60Motor (MotorInformation* Motor, uint8_t MotorID, uint8_t CanNum);
 uint8_t GetJ60MotorConfig (MotorInformation* Motor);
 uint8_t ConfigJ60MotorCanTimeout (MotorInformation* Motor, int CanTimeout);
 uint8_t ConfigJ60MotorCurrentBandWidth (MotorInformation* Motor, int CurrentBandWidth);

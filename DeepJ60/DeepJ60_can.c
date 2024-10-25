@@ -16,14 +16,25 @@ CAN_RxHeaderTypeDef CanRxInformation;
 /**
  * @brief Start can transmission
  * 
- * @param hcan: The pointer to the handle of can
+ * @param CanNum: The number of can bus
  * 
  * @return uint8_t: CAN_ERROR: Error happened while starting can transmission
  *                  CAN_NORMAL: It is normal while starting can transmission
  */
-uint8_t StartCan (CanHandle* hcan) {
-    if (HAL_CAN_Start(hcan) != HAL_OK) {
+uint8_t StartCan (uint8_t CanNum) {
+    if (CanNum != 1 && CanNum != 2) {  // Depend on the amount of can bus on the chip
         return CAN_ERROR;
+    }
+
+    if (CanNum == 1) {
+        if (HAL_CAN_Start(&hcan1) != HAL_OK) {
+            return CAN_ERROR;
+        }
+    }
+    else if (CanNum == 2) {
+        if (HAL_CAN_Start(&hcan2) != HAL_OK) {
+            return CAN_ERROR;
+        }
     }
     return CAN_NORMAL;
 }
@@ -31,14 +42,25 @@ uint8_t StartCan (CanHandle* hcan) {
 /**
  * @brief Stop can transmission
  * 
- * @param hcan: The pointer to the handle of can
+ * @param CanNum: The number of can bus
  * 
  * @return uint8_t: CAN_ERROR: Error happened while stopping can transmission
  *                  CAN_NORMAL: It is normal while stopping can transmission
  */
-uint8_t StopCan (CanHandle* hcan) {
-    if (HAL_CAN_Stop(hcan) != HAL_OK) {
+uint8_t StopCan (uint8_t CanNum) {
+    if (CanNum != 1 && CanNum != 2) {  // Depend on the amount of can bus on the chip
         return CAN_ERROR;
+    }
+
+    if (CanNum == 1) {
+        if (HAL_CAN_Stop(&hcan1) != HAL_OK) {
+            return CAN_ERROR;
+        }
+    }
+    else if (CanNum == 2) {
+        if (HAL_CAN_Stop(&hcan2) != HAL_OK) {
+            return CAN_ERROR;
+        }
     }
     return CAN_NORMAL;
 }
@@ -75,13 +97,25 @@ float CanDataToRealData (uint32_t CanData, float MinRealData, float MaxRealData,
  * @brief Send data to can bus
  * 
  * @param Can: The pointer to the struct of can frame
- * @param hcan: The pointer to the handle of can
+ * @param CanNum: The number of can bus
  * 
  * @return uint8_t: CAN_ERROR: Error happened while sending data to can bus
  *                  CAN_NORMAL: It is normal while sending data to can bus
  */
-uint8_t Can_Send (CanFrame* Can, CanHandle* hcan) {
+uint8_t Can_Send (CanFrame* Can, uint8_t CanNum) {
+    if (CanNum != 1 && CanNum != 2) {  // Depend on the amount of can bus on the chip
+        return CAN_ERROR;
+    }
+
     CanTxStruct CanTxInformation;
+    CanHandle* hcan;
+
+    if (CanNum == 1) {
+        hcan = &hcan1;
+    }
+    else if (CanNum == 2) {
+        hcan = &hcan2;
+    }
 
     CanTxInformation.StdId = Can->ID;
     CanTxInformation.IDE = CAN_ID_STD;
@@ -117,23 +151,35 @@ uint8_t Can_Send (CanFrame* Can, CanHandle* hcan) {
  *                  CAN_NORMAL: It is normal while receiving data from can bus
  */
 uint8_t Can_Receive (CanFrame* Can, CanHandle* hcan) {
+    uint32_t CAN_RX_FIFO = 0;
+    
+    if (hcan->Instance == CAN1) {
+        CAN_RX_FIFO = CAN_RX_FIFO0;
+    }
+    else if (hcan->Instance == CAN2) {
+        CAN_RX_FIFO = CAN_RX_FIFO1;
+    }
+    else {
+        return CAN_ERROR;
+    }
+
     if (Can->ID >> CAN_ID_SHIFT_BITS == CONTROL_MOTOR) {
-        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxInformation, Can->ReceiveCanData.data) != HAL_OK) {
+        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO, &CanRxInformation, Can->ReceiveCanData.data) != HAL_OK) {
             return CAN_ERROR;
         }
     }
     else if (Can->ID >> CAN_ID_SHIFT_BITS == GET_CONFIG) {
-        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxInformation, Can->GetConfigReceive) != HAL_OK) {
+        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO, &CanRxInformation, Can->GetConfigReceive) != HAL_OK) {
             return CAN_ERROR;
         }
     }
     else if (Can->ID >> CAN_ID_SHIFT_BITS == GET_STATUS_WORD) {
-        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxInformation, Can->ReceiveStatusWord) != HAL_OK) {
+        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO, &CanRxInformation, Can->ReceiveStatusWord) != HAL_OK) {
             return CAN_ERROR;
         }
     }
     else {
-        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxInformation, Can->NormalCommandStatus) != HAL_OK) {
+        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO, &CanRxInformation, Can->NormalCommandStatus) != HAL_OK) {
             return CAN_ERROR;
         }
     }
