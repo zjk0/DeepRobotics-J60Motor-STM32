@@ -188420,20 +188420,6 @@
     "scope": null
   },
   {
-    "ID": "c:stdint.h@T@__data_uintptr_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned int",
-    "location": {
-      "column": "1",
-      "line": "89",
-      "path": "F:\\EWARM_8321\\arm\\inc\\c\\stdint.h"
-    },
-    "name": "__data_uintptr_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
     "ID": "c:stdint.h@T@__data_intptr_t",
     "What": "Typedef",
     "defdec": "Def",
@@ -188444,6 +188430,20 @@
       "path": "F:\\EWARM_8321\\arm\\inc\\c\\stdint.h"
     },
     "name": "__data_intptr_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@__data_uintptr_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned int",
+    "location": {
+      "column": "1",
+      "line": "89",
+      "path": "F:\\EWARM_8321\\arm\\inc\\c\\stdint.h"
+    },
+    "name": "__data_uintptr_t",
     "origin": "system_include",
     "scope": null
   },
@@ -273254,62 +273254,6 @@
     "scope": null
   },
   {
-    "ID": "c:cmsis_version.h@1231@macro@__CMSIS_VERSION_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__CMSIS_VERSION_H",
-    "location": {
-      "column": "9",
-      "line": "32",
-      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Drivers\\CMSIS\\Include\\cmsis_version.h"
-    },
-    "name": "__CMSIS_VERSION_H",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmsis_version.h@1294@macro@__CM_CMSIS_VERSION_MAIN",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__CM_CMSIS_VERSION_MAIN",
-    "location": {
-      "column": "9",
-      "line": "35",
-      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Drivers\\CMSIS\\Include\\cmsis_version.h"
-    },
-    "name": "__CM_CMSIS_VERSION_MAIN",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmsis_version.h@1414@macro@__CM_CMSIS_VERSION_SUB",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__CM_CMSIS_VERSION_SUB",
-    "location": {
-      "column": "9",
-      "line": "36",
-      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Drivers\\CMSIS\\Include\\cmsis_version.h"
-    },
-    "name": "__CM_CMSIS_VERSION_SUB",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:cmsis_version.h@1533@macro@__CM_CMSIS_VERSION",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__CM_CMSIS_VERSION",
-    "location": {
-      "column": "9",
-      "line": "37",
-      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Drivers\\CMSIS\\Include\\cmsis_version.h"
-    },
-    "name": "__CM_CMSIS_VERSION",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:system_stm32f4xx.h@903@macro@__SYSTEM_STM32F4XX_H",
     "What": "MacroDef",
     "defdec": "Def",
@@ -273464,90 +273408,6 @@
     "scope": null
   },
   {
-    "ID": "c:ysizet.h@107@macro@_YSIZET_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_YSIZET_H",
-    "location": {
-      "column": "9",
-      "line": "5",
-      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "_YSIZET_H",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@262@macro@_SIZE_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_SIZE_T",
-    "location": {
-      "column": "11",
-      "line": "16",
-      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "_SIZE_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@280@macro@_STD_USING_SIZE_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STD_USING_SIZE_T",
-    "location": {
-      "column": "11",
-      "line": "17",
-      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "_STD_USING_SIZE_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@T@size_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Sizet",
-    "location": {
-      "column": "18",
-      "line": "18",
-      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "size_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@339@macro@__DATA_PTR_MEM_HELPER1__",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__DATA_PTR_MEM_HELPER1__",
-    "location": {
-      "column": "9",
-      "line": "21",
-      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "__DATA_PTR_MEM_HELPER1__",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@T@__data_size_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned int",
-    "location": {
-      "column": "1",
-      "line": "23",
-      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "__data_size_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
     "ID": "c:can.h@847@macro@__CAN_H__",
     "What": "MacroDef",
     "defdec": "Def",
@@ -273646,34 +273506,6 @@
     "scope": null
   },
   {
-    "ID": "c:@F@CAN_FilterConfig",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void CAN_FilterConfig(CAN_HandleTypeDef *, CAN_FilterTypeDef *)",
-    "location": {
-      "column": "6",
-      "line": "48",
-      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Inc\\can.h"
-    },
-    "name": "CAN_FilterConfig",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@CAN_FilterConfig",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void CAN_FilterConfig(CAN_HandleTypeDef *, CAN_FilterTypeDef *)",
-    "location": {
-      "column": "6",
-      "line": "48",
-      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Inc\\can.h"
-    },
-    "name": "CAN_FilterConfig",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:@F@HAL_CAN_RxFifo0MsgPendingCallback",
     "What": "Function",
     "defdec": "Def",
@@ -273699,6 +273531,146 @@
     },
     "name": "HAL_CAN_RxFifo1MsgPendingCallback",
     "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:cmsis_version.h@1231@macro@__CMSIS_VERSION_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__CMSIS_VERSION_H",
+    "location": {
+      "column": "9",
+      "line": "32",
+      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Drivers\\CMSIS\\Include\\cmsis_version.h"
+    },
+    "name": "__CMSIS_VERSION_H",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmsis_version.h@1294@macro@__CM_CMSIS_VERSION_MAIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__CM_CMSIS_VERSION_MAIN",
+    "location": {
+      "column": "9",
+      "line": "35",
+      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Drivers\\CMSIS\\Include\\cmsis_version.h"
+    },
+    "name": "__CM_CMSIS_VERSION_MAIN",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmsis_version.h@1414@macro@__CM_CMSIS_VERSION_SUB",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__CM_CMSIS_VERSION_SUB",
+    "location": {
+      "column": "9",
+      "line": "36",
+      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Drivers\\CMSIS\\Include\\cmsis_version.h"
+    },
+    "name": "__CM_CMSIS_VERSION_SUB",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:cmsis_version.h@1533@macro@__CM_CMSIS_VERSION",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__CM_CMSIS_VERSION",
+    "location": {
+      "column": "9",
+      "line": "37",
+      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Drivers\\CMSIS\\Include\\cmsis_version.h"
+    },
+    "name": "__CM_CMSIS_VERSION",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@107@macro@_YSIZET_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_YSIZET_H",
+    "location": {
+      "column": "9",
+      "line": "5",
+      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "_YSIZET_H",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@262@macro@_SIZE_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_SIZE_T",
+    "location": {
+      "column": "11",
+      "line": "16",
+      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "_SIZE_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@280@macro@_STD_USING_SIZE_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STD_USING_SIZE_T",
+    "location": {
+      "column": "11",
+      "line": "17",
+      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "_STD_USING_SIZE_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@T@size_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Sizet",
+    "location": {
+      "column": "18",
+      "line": "18",
+      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "size_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@339@macro@__DATA_PTR_MEM_HELPER1__",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__DATA_PTR_MEM_HELPER1__",
+    "location": {
+      "column": "9",
+      "line": "21",
+      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "__DATA_PTR_MEM_HELPER1__",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@T@__data_size_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned int",
+    "location": {
+      "column": "1",
+      "line": "23",
+      "path": "F:\\EWARM_8321\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "__data_size_t",
+    "origin": "system_include",
     "scope": null
   },
   {
@@ -274206,44 +274178,30 @@
     "scope": null
   },
   {
-    "ID": "c:@F@CAN_FilterConfig",
+    "ID": "c:@F@CAN1_FilterConfig",
     "What": "Function",
     "defdec": "Dec",
-    "display": "void CAN_FilterConfig(CAN_HandleTypeDef *, CAN_FilterTypeDef *)",
+    "display": "void CAN1_FilterConfig(void)",
     "location": {
       "column": "6",
       "line": "25",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
     },
-    "name": "CAN_FilterConfig",
+    "name": "CAN1_FilterConfig",
     "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@hcan1_filter",
-    "What": "Variable",
+    "ID": "c:@F@CAN2_FilterConfig",
+    "What": "Function",
     "defdec": "Dec",
-    "display": "hcan1_filter",
+    "display": "void CAN2_FilterConfig(void)",
     "location": {
-      "column": "19",
-      "line": "27",
+      "column": "6",
+      "line": "26",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
     },
-    "name": "hcan1_filter",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@hcan2_filter",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "hcan2_filter",
-    "location": {
-      "column": "19",
-      "line": "28",
-      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
-    },
-    "name": "hcan2_filter",
+    "name": "CAN2_FilterConfig",
     "origin": "project_file",
     "scope": null
   },
@@ -274254,7 +274212,7 @@
     "display": "hcan1",
     "location": {
       "column": "19",
-      "line": "32",
+      "line": "30",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
     },
     "name": "hcan1",
@@ -274268,7 +274226,7 @@
     "display": "hcan2",
     "location": {
       "column": "19",
-      "line": "33",
+      "line": "31",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
     },
     "name": "hcan2",
@@ -274282,7 +274240,7 @@
     "display": "void MX_CAN1_Init(void)",
     "location": {
       "column": "6",
-      "line": "36",
+      "line": "34",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
     },
     "name": "MX_CAN1_Init",
@@ -274296,7 +274254,7 @@
     "display": "void MX_CAN2_Init(void)",
     "location": {
       "column": "6",
-      "line": "71",
+      "line": "70",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
     },
     "name": "MX_CAN2_Init",
@@ -274332,7 +274290,7 @@
     "scope": null
   },
   {
-    "ID": "c:can.c@3072@F@HAL_CAN_MspInit@GPIO_InitStruct",
+    "ID": "c:can.c@2998@F@HAL_CAN_MspInit@GPIO_InitStruct",
     "What": "Variable",
     "defdec": "Def",
     "display": "GPIO_InitStruct",
@@ -274346,7 +274304,7 @@
     "scope": null
   },
   {
-    "ID": "c:can.c@3337@F@HAL_CAN_MspInit@tmpreg",
+    "ID": "c:can.c@3263@F@HAL_CAN_MspInit@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",
@@ -274360,7 +274318,7 @@
     "scope": null
   },
   {
-    "ID": "c:can.c@3380@F@HAL_CAN_MspInit@tmpreg",
+    "ID": "c:can.c@3306@F@HAL_CAN_MspInit@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",
@@ -274374,7 +274332,7 @@
     "scope": null
   },
   {
-    "ID": "c:can.c@4334@F@HAL_CAN_MspInit@tmpreg",
+    "ID": "c:can.c@4260@F@HAL_CAN_MspInit@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",
@@ -274388,7 +274346,7 @@
     "scope": null
   },
   {
-    "ID": "c:can.c@4441@F@HAL_CAN_MspInit@tmpreg",
+    "ID": "c:can.c@4367@F@HAL_CAN_MspInit@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",
@@ -274402,7 +274360,7 @@
     "scope": null
   },
   {
-    "ID": "c:can.c@4484@F@HAL_CAN_MspInit@tmpreg",
+    "ID": "c:can.c@4410@F@HAL_CAN_MspInit@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",
@@ -274430,16 +274388,58 @@
     "scope": null
   },
   {
-    "ID": "c:@F@CAN_FilterConfig",
+    "ID": "c:@F@CAN1_FilterConfig",
     "What": "Function",
     "defdec": "Def",
-    "display": "void CAN_FilterConfig(CAN_HandleTypeDef *, CAN_FilterTypeDef *)",
+    "display": "void CAN1_FilterConfig(void)",
     "location": {
       "column": "6",
       "line": "240",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
     },
-    "name": "CAN_FilterConfig",
+    "name": "CAN1_FilterConfig",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:can.c@6731@F@CAN1_FilterConfig@can1_filter",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "can1_filter",
+    "location": {
+      "column": "23",
+      "line": "241",
+      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
+    },
+    "name": "can1_filter",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@CAN2_FilterConfig",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void CAN2_FilterConfig(void)",
+    "location": {
+      "column": "6",
+      "line": "257",
+      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
+    },
+    "name": "CAN2_FilterConfig",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:can.c@7321@F@CAN2_FilterConfig@can2_filter",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "can2_filter",
+    "location": {
+      "column": "23",
+      "line": "258",
+      "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\Core\\Src\\can.c"
+    },
+    "name": "can2_filter",
     "origin": "project_file",
     "scope": null
   },
@@ -274842,7 +274842,7 @@
     "display": "uint8_t EnableJ60Motor(MotorInformation *, uint8_t, uint8_t)",
     "location": {
       "column": "9",
-      "line": "368",
+      "line": "367",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "EnableJ60Motor",
@@ -274856,7 +274856,7 @@
     "display": "uint8_t GetJ60MotorConfig(MotorInformation *)",
     "location": {
       "column": "9",
-      "line": "393",
+      "line": "390",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "GetJ60MotorConfig",
@@ -274870,7 +274870,7 @@
     "display": "uint8_t ConfigJ60MotorCanTimeout(MotorInformation *, int)",
     "location": {
       "column": "9",
-      "line": "414",
+      "line": "411",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "ConfigJ60MotorCanTimeout",
@@ -274884,7 +274884,7 @@
     "display": "uint8_t ConfigJ60MotorCurrentBandWidth(MotorInformation *, int)",
     "location": {
       "column": "9",
-      "line": "440",
+      "line": "437",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "ConfigJ60MotorCurrentBandWidth",
@@ -274898,7 +274898,7 @@
     "display": "uint8_t SaveJ60MotorConfig(MotorInformation *)",
     "location": {
       "column": "9",
-      "line": "465",
+      "line": "462",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "SaveJ60MotorConfig",
@@ -274912,7 +274912,7 @@
     "display": "uint8_t RunJ60MotorPositionMode(MotorInformation *, float, float, float)",
     "location": {
       "column": "9",
-      "line": "488",
+      "line": "485",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "RunJ60MotorPositionMode",
@@ -274926,7 +274926,7 @@
     "display": "uint8_t RunJ60MotorVelocityMode(MotorInformation *, float, float)",
     "location": {
       "column": "9",
-      "line": "513",
+      "line": "510",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "RunJ60MotorVelocityMode",
@@ -274940,7 +274940,7 @@
     "display": "uint8_t RunJ60MotorTorqueMode(MotorInformation *, float)",
     "location": {
       "column": "9",
-      "line": "537",
+      "line": "534",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "RunJ60MotorTorqueMode",
@@ -274954,7 +274954,7 @@
     "display": "uint8_t RunJ60MotorKdMode(MotorInformation *, float)",
     "location": {
       "column": "9",
-      "line": "561",
+      "line": "558",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "RunJ60MotorKdMode",
@@ -274968,7 +274968,7 @@
     "display": "uint8_t RunJ60MotorZeroTorqueMode(MotorInformation *)",
     "location": {
       "column": "9",
-      "line": "584",
+      "line": "581",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "RunJ60MotorZeroTorqueMode",
@@ -274982,7 +274982,7 @@
     "display": "uint8_t RunJ60MotorPositionTorqueMode(MotorInformation *, float, float, float, float)",
     "location": {
       "column": "9",
-      "line": "611",
+      "line": "608",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "RunJ60MotorPositionTorqueMode",
@@ -274996,7 +274996,7 @@
     "display": "uint8_t RunJ60MotorVelocityTorqueMode(MotorInformation *, float, float, float)",
     "location": {
       "column": "9",
-      "line": "637",
+      "line": "634",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "RunJ60MotorVelocityTorqueMode",
@@ -275010,7 +275010,7 @@
     "display": "uint8_t RunJ60MotorPositonVelocityTorqueMode(MotorInformation *, float, float, float, float, float)",
     "location": {
       "column": "9",
-      "line": "665",
+      "line": "662",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "RunJ60MotorPositonVelocityTorqueMode",
@@ -275024,7 +275024,7 @@
     "display": "uint8_t RunJ60Motor(MotorInformation *, float, float, float, float, float, enum MotorMode)",
     "location": {
       "column": "9",
-      "line": "694",
+      "line": "691",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "RunJ60Motor",
@@ -275038,7 +275038,7 @@
     "display": "uint8_t GetJ60MotorStatusWord(MotorInformation *)",
     "location": {
       "column": "9",
-      "line": "765",
+      "line": "762",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "GetJ60MotorStatusWord",
@@ -275052,7 +275052,7 @@
     "display": "uint8_t J60MotorErrorReset(MotorInformation *)",
     "location": {
       "column": "9",
-      "line": "785",
+      "line": "782",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "J60MotorErrorReset",
@@ -275066,7 +275066,7 @@
     "display": "void AnalyseJ60MotorReceiveData(MotorInformation *)",
     "location": {
       "column": "6",
-      "line": "804",
+      "line": "801",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "AnalyseJ60MotorReceiveData",
@@ -275074,13 +275074,13 @@
     "scope": null
   },
   {
-    "ID": "c:DeepJ60_Motor.c@30320@F@AnalyseJ60MotorReceiveData@ReceiveMotorID",
+    "ID": "c:DeepJ60_Motor.c@30251@F@AnalyseJ60MotorReceiveData@ReceiveMotorID",
     "What": "Variable",
     "defdec": "Def",
     "display": "ReceiveMotorID",
     "location": {
       "column": "13",
-      "line": "805",
+      "line": "802",
       "path": "F:\\none\\Study\\Other\\my\\Deep-J60-Motor\\STM32_DeepJ60_test\\User\\DeepJ60\\DeepJ60_Motor.c"
     },
     "name": "ReceiveMotorID",
@@ -275284,7 +275284,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3119@F@SystemClock_Config@RCC_OscInitStruct",
+    "ID": "c:main.c@3126@F@SystemClock_Config@RCC_OscInitStruct",
     "What": "Variable",
     "defdec": "Def",
     "display": "RCC_OscInitStruct",
@@ -275298,7 +275298,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3166@F@SystemClock_Config@RCC_ClkInitStruct",
+    "ID": "c:main.c@3173@F@SystemClock_Config@RCC_ClkInitStruct",
     "What": "Variable",
     "defdec": "Def",
     "display": "RCC_ClkInitStruct",
@@ -275312,7 +275312,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3281@F@SystemClock_Config@tmpreg",
+    "ID": "c:main.c@3288@F@SystemClock_Config@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",
@@ -275326,7 +275326,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3312@F@SystemClock_Config@tmpreg",
+    "ID": "c:main.c@3319@F@SystemClock_Config@tmpreg",
     "What": "Variable",
     "defdec": "Def",
     "display": "tmpreg",

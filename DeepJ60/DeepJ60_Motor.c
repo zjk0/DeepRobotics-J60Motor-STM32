@@ -351,7 +351,6 @@ uint8_t DisableJ60Motor (MotorInformation* Motor) {
         return ERROR;
     }
 
-    StopJ60MotorCommand(Motor);
     return NORMAL;
 }
 
@@ -372,8 +371,6 @@ uint8_t EnableJ60Motor (MotorInformation* Motor, uint8_t MotorID, uint8_t CanNum
 
     Can.ID = GetJ60MotorCanID(&Motor->MotorCommand);
     Can.DLC = SEND_DLC_ENABLE_MOTOR;
-
-    StartJ60MotorCommand(Motor);
 
     if (Can_Send(&Can, Motor->CanNum) == CAN_ERROR) {
         return ERROR;
