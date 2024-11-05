@@ -8,11 +8,15 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
         Can_Receive(&Can, hcan);
         AnalyseJ60MotorReceiveData(J60Motor_CAN1);
     }
-}
-
-void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan) {
-    if (hcan->Instance == CAN2) {
+    else if (hcan->Instance == CAN2) {
         Can_Receive(&Can, hcan);
         AnalyseJ60MotorReceiveData(J60Motor_CAN2);
     }
 }
+
+// void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan) {
+//     if (hcan->Instance == CAN2) {
+//         Can_Receive(&Can, hcan);
+//         AnalyseJ60MotorReceiveData(J60Motor_CAN2);
+//     }
+// }
