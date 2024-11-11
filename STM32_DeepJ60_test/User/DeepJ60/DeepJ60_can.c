@@ -151,25 +151,8 @@ uint8_t Can_Send (CanFrame* Can, uint8_t CanNum) {
  *                  CAN_NORMAL: It is normal while receiving data from can bus
  */
 uint8_t Can_Receive (CanFrame* Can, CanHandle* hcan) {
-    if (Can->ID >> CAN_ID_SHIFT_BITS == CONTROL_MOTOR) {
-        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxInformation, Can->ReceiveCanData.data) != HAL_OK) {
-            return CAN_ERROR;
-        }
-    }
-    else if (Can->ID >> CAN_ID_SHIFT_BITS == GET_CONFIG) {
-        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxInformation, Can->GetConfigReceive) != HAL_OK) {
-            return CAN_ERROR;
-        }
-    }
-    else if (Can->ID >> CAN_ID_SHIFT_BITS == GET_STATUS_WORD) {
-        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxInformation, Can->ReceiveStatusWord) != HAL_OK) {
-            return CAN_ERROR;
-        }
-    }
-    else {
-        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxInformation, Can->NormalCommandStatus) != HAL_OK) {
-            return CAN_ERROR;
-        }
+    if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxInformation, Can->ReceiveCanData) != HAL_OK) {
+        return CAN_ERROR;
     }
     return CAN_NORMAL;
 }

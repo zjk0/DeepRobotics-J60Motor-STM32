@@ -132,26 +132,11 @@ typedef struct {
     uint32_t Torque;
 } SendDataInformation;
 
-// Received data
-typedef struct {
-    uint32_t CurrentPosition;
-    uint32_t CurrentVelocity;
-    uint32_t CurrentTorque;
-    uint32_t TemperatureFlag;
-    uint32_t CurrentTemperature;
-} ReceiveDataInformation;
-
 // The struct to store two type of sent can data
 typedef struct {
     uint8_t data[8];               // Store real data according to transmit protocol
     SendDataInformation SendData;  // Real data which are needed to be sent in can bus
 } SendCanDataInformaiton;
-
-// The struct to store two type of received can data
-typedef struct {
-    uint8_t data[8];                     // Store real data according to transmit protocol
-    ReceiveDataInformation ReceiveData;  // Real data which are received in can bus
-} ReceiveCanDataInformation;
 
 // Do more typedef to package more
 typedef CAN_TxHeaderTypeDef CanTxStruct;
@@ -160,15 +145,12 @@ typedef CAN_HandleTypeDef CanHandle;
 
 // Can frame
 typedef struct {
-    uint16_t ID;                               // The id in can bus
-    uint8_t DLC;                               // The bit number of data
-    SendCanDataInformaiton SendCanData;        // Data sent to can bus according to command of controlling motor
-    ReceiveCanDataInformation ReceiveCanData;  // Data received from can bus by command of controlling motor
-    uint8_t SetConfigSend[2];                  // Data sent to can bus according to command of setting configuration (can timeout or band width)
-    uint8_t GetConfigReceive[8];               // Data received from can bus by command of getting configuration
-    uint8_t ReceiveStatusWord[2];              // Data received from can bus by command of getting status word
-    uint8_t NormalCommandSend[8];              // Data sent to can bus according to normal command
-    uint8_t NormalCommandStatus[1];            // Data received from can bus by normal command to tell us whether there is error
+    uint16_t ID;                         // The id in can bus
+    uint8_t DLC;                         // The bit number of data
+    SendCanDataInformaiton SendCanData;  // Data sent to can bus according to command of controlling motor
+    uint8_t SetConfigSend[2];            // Data sent to can bus according to command of setting configuration (can timeout or band width)
+    uint8_t NormalCommandSend[8];        // Data sent to can bus according to normal command
+    uint8_t ReceiveCanData[8];           // Data received from can bus
 } CanFrame;
 
 /**

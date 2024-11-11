@@ -161,38 +161,44 @@ void J60MotorMotionDataToSendCanData (MotorDataInformation* MotorData, SendCanDa
  * @brief Convert the data received from can bus to the motion data of motor while using command to control motor
  * 
  * @param ReceiveMotorData: The pointer to the struct which stores the motion parameters returned by motor
- * @param ReceiveCanData: The pointer to the struct which stores the data received from can bus while using command to control motor
+ * @param ReceiveCanData: The pointer to the array which stores the data received from can bus while using command to control motor
  * 
  * @return none
  */
-void ReceiveCanDataToJ60MotorMotionData (ReceiveMotorDataInformation* ReceiveMotorData, ReceiveCanDataInformation* ReceiveCanData) {
-    ReceiveCanData->ReceiveData.CurrentPosition = ReceiveCanData->data[0] | (ReceiveCanData->data[1] << 8) | ((ReceiveCanData->data[2] & 0x0F) << 16);
-    ReceiveCanData->ReceiveData.CurrentVelocity = ((ReceiveCanData->data[2] >> 4) & 0x0F) | ((ReceiveCanData->data[3] << 4) & 0xFF0) | ((ReceiveCanData->data[4] << 12) & 0xFF000);
-    ReceiveCanData->ReceiveData.CurrentTorque = (ReceiveCanData->data[5] & 0xFF) | ((ReceiveCanData->data[6] << 8) & 0xFF00);
-    ReceiveCanData->ReceiveData.TemperatureFlag = ReceiveCanData->data[7] & 0x01;
-    ReceiveCanData->ReceiveData.CurrentTemperature = (ReceiveCanData->data[7] >> 1) & 0x7F;
+void ReceiveCanDataToJ60MotorMotionData (ReceiveMotorDataInformation* ReceiveMotorData, uint8_t* ReceiveCanData) {
+    uint32_t CurrentPosition = 0;
+    uint32_t CurrentVelocity = 0;
+    uint32_t CurrentTorque = 0;
+    uint32_t TemperatureFlag = 0;
+    uint32_t CurrentTemperature = 0;
 
-    ReceiveMotorData->CurrentPosition = CanDataToRealData(ReceiveCanData->ReceiveData.CurrentPosition, 
+    CurrentPosition = ReceiveCanData[0] | (ReceiveCanData[1] << 8) | ((ReceiveCanData[2] & 0x0F) << 16);
+    CurrentVelocity = ((ReceiveCanData[2] >> 4) & 0x0F) | ((ReceiveCanData[3] << 4) & 0xFF0) | ((ReceiveCanData[4] << 12) & 0xFF00);
+    CurrentTorque = (ReceiveCanData[5] & 0xFF) | ((ReceiveCanData[6] << 8) & 0xFF00);
+    TemperatureFlag = ReceiveCanData[7] & 0x01;
+    CurrentTemperature = (ReceiveCanData[7] >> 1) & 0x7F;
+
+    ReceiveMotorData->CurrentPosition = CanDataToRealData(CurrentPosition, 
                                                           POSITION_MIN, 
                                                           POSITION_MAX, 
                                                           RECEIVE_CURRENT_POSITION_BIT);
-    ReceiveMotorData->CurrentVelocity = CanDataToRealData(ReceiveCanData->ReceiveData.CurrentVelocity, 
+    ReceiveMotorData->CurrentVelocity = CanDataToRealData(CurrentVelocity, 
                                                           VELOCITY_MIN, 
                                                           VELOCITY_MAX, 
                                                           RECEIVE_CURRENT_VELOCITY_BIT);
-    ReceiveMotorData->CurrentTorque = CanDataToRealData(ReceiveCanData->ReceiveData.CurrentTorque, 
+    ReceiveMotorData->CurrentTorque = CanDataToRealData(CurrentTorque, 
                                                         TORQUE_MIN, 
                                                         TORQUE_MAX, 
                                                         RECEIVE_CURRENT_TORQUE_BIT);
-    ReceiveMotorData->TemperatureFlag = ReceiveCanData->ReceiveData.TemperatureFlag;
+    ReceiveMotorData->TemperatureFlag = TemperatureFlag;
     if (ReceiveMotorData->TemperatureFlag == MosfetTemperatureFlag) {
-        ReceiveMotorData->CurrentTemperature = CanDataToRealData(ReceiveCanData->ReceiveData.CurrentTemperature, 
+        ReceiveMotorData->CurrentTemperature = CanDataToRealData(CurrentTemperature, 
                                                                  MOSFET_TEMPERATURE_MIN, 
                                                                  MOSFET_TEMPERATURE_MAX, 
                                                                  RECEIVE_CURRENT_TEMPERATURE_BIT);
     }
     else if (ReceiveMotorData->TemperatureFlag == MotorTemperatureFlag) {
-        ReceiveMotorData->CurrentTemperature = CanDataToRealData(ReceiveCanData->ReceiveData.CurrentTemperature, 
+        ReceiveMotorData->CurrentTemperature = CanDataToRealData(CurrentTemperature, 
                                                                  MOTOR_TEMPERATURE_MIN, 
                                                                  MOTOR_TEMPERATURE_MAX, 
                                                                  RECEIVE_CURRENT_TEMPERATURE_BIT);
@@ -223,16 +229,16 @@ void J60MotorConfigToSendCanData (MotorConfigInformation* MotorConfig, uint8_t* 
  * @brief Convert the data received from can bus to the motor configuration while using command to get motor configuration
  * 
  * @param GetConfigReceivedata: The pointer to the struct which stores the motor configuration while using command to get configuration
- * @param GetConfigReceive: The pointer to the array which stores the data returned by motor while using command to get configuration
+ * @param ReceiveCanData: The pointer to the array which stores the data returned by motor while using command to get configuration
  * 
  * @return none
  */
-void ReceiveCanDataToJ60MotorConfig (GetConfigReceiveDataInformation* GetConfigReceiveData, uint8_t* GetConfigReceive) {
-    GetConfigReceiveData->InternalParameter = (GetConfigReceive[0] & 0xFF) | ((GetConfigReceive[1] << 8) & 0xFF00);
-    GetConfigReceiveData->MotorID = GetConfigReceive[2];
-    GetConfigReceiveData->CanTimeout = GetConfigReceive[3];
-    GetConfigReceiveData->CurrentBandWidth = (GetConfigReceive[4] & 0xFF) | ((GetConfigReceive[5] << 8) & 0xFF00);
-    GetConfigReceiveData->CurrentLimit = (GetConfigReceive[6] & 0xFF) | ((GetConfigReceive[7] << 8) & 0xFF00);
+void ReceiveCanDataToJ60MotorConfig (GetConfigReceiveDataInformation* GetConfigReceiveData, uint8_t* ReceiveCanData) {
+    GetConfigReceiveData->InternalParameter = (ReceiveCanData[0] & 0xFF) | ((ReceiveCanData[1] << 8) & 0xFF00);
+    GetConfigReceiveData->MotorID = ReceiveCanData[2];
+    GetConfigReceiveData->CanTimeout = ReceiveCanData[3];
+    GetConfigReceiveData->CurrentBandWidth = (ReceiveCanData[4] & 0xFF) | ((ReceiveCanData[5] << 8) & 0xFF00);
+    GetConfigReceiveData->CurrentLimit = (ReceiveCanData[6] & 0xFF) | ((ReceiveCanData[7] << 8) & 0xFF00);
 }
 
 /**
@@ -304,21 +310,22 @@ void J60MotorDataToSendCanData (MotorInformation* Motor, CanFrame* Can) {
  * 
  * @param Motor: The pointer to the motor information struct
  * @param Can: The pointer to the can frame struct
+ * @param CommandID: The command ID which is gotten from the can ID returned by motor
  * 
  * @return none
  */
-void ReceiveCanDataToJ60MotorData (MotorInformation* Motor, CanFrame* Can) {
-    if (Motor->MotorCommand.ID == CONTROL_MOTOR) {
-        ReceiveCanDataToJ60MotorMotionData(&Motor->ReceiveMotorData, &Can->ReceiveCanData);
+void ReceiveCanDataToJ60MotorData (MotorInformation* Motor, CanFrame* Can, uint8_t CommandID) {
+    if (CommandID == CONTROL_MOTOR) {
+        ReceiveCanDataToJ60MotorMotionData(&Motor->ReceiveMotorData, Can->ReceiveCanData);
     }
-    else if (Motor->MotorCommand.ID == GET_CONFIG) {
-        ReceiveCanDataToJ60MotorConfig(&Motor->GetConfigReceiveData, Can->GetConfigReceive);
+    else if (CommandID== GET_CONFIG) {
+        ReceiveCanDataToJ60MotorConfig(&Motor->GetConfigReceiveData, Can->ReceiveCanData);
     }
-    else if (Motor->MotorCommand.ID == GET_STATUS_WORD) {
-        ReceiveStatusWordToJ60MotorStatusWord(&Motor->MotorStatusWord, Can->ReceiveStatusWord);
+    else if (CommandID == GET_STATUS_WORD) {
+        ReceiveStatusWordToJ60MotorStatusWord(&Motor->MotorStatusWord, Can->ReceiveCanData);
     }
     else {
-        ReceiveCommandStatusToJ60MotorCommandStatus(&Motor->MotorCommandStatus, Can->NormalCommandStatus);
+        ReceiveCommandStatusToJ60MotorCommandStatus(&Motor->MotorCommandStatus, Can->ReceiveCanData);
     }
 }
 
@@ -799,6 +806,8 @@ uint8_t J60MotorErrorReset (MotorInformation* Motor) {
  * @return none
  */
 void AnalyseJ60MotorReceiveData (MotorInformation* Motor) {
-    uint8_t ReceiveMotorID = (CanRxInformation.StdId & 0x1F) - 0x10;
-    ReceiveCanDataToJ60MotorData(&Motor[ReceiveMotorID - 1], &Can);
+    uint8_t ReceiveCanID = CanRxInformation.StdId;
+    uint8_t ReceiveCommandID = ReceiveCanID >> CAN_ID_SHIFT_BITS;
+    uint8_t ReceiveMotorID = (ReceiveCanID & 0x1F) - 0x10;
+    ReceiveCanDataToJ60MotorData(&Motor[ReceiveMotorID - 1], &Can, ReceiveCommandID);
 }

@@ -144,13 +144,13 @@ void SetNormalCommand (MotorInformation* Motor, uint8_t CommandID);
 
 // Data convertion
 void J60MotorMotionDataToSendCanData (MotorDataInformation* MotorData, SendCanDataInformaiton* SendCanData);
-void ReceiveCanDataToJ60MotorMotionData (ReceiveMotorDataInformation* ReceiveMotorData, ReceiveCanDataInformation* ReceiveCanData);
+void ReceiveCanDataToJ60MotorMotionData (ReceiveMotorDataInformation* ReceiveMotorData, uint8_t* ReceiveCanData);
 void J60MotorConfigToSendCanData (MotorConfigInformation* MotorConfig, uint8_t* SetConfigSend, uint8_t CommandID);
-void ReceiveCanDataToJ60MotorConfig (GetConfigReceiveDataInformation* GetConfigReceiveData, uint8_t* GetConfigReceive);
+void ReceiveCanDataToJ60MotorConfig (GetConfigReceiveDataInformation* GetConfigReceiveData, uint8_t* ReceiveCanData);
 void ReceiveCommandStatusToJ60MotorCommandStatus (uint8_t* MotorCommandStatus, uint8_t* ReceiveNormalCommandStatus);
 void ReceiveStatusWordToJ60MotorStatusWord (uint16_t* MotorStatusWord, uint8_t* ReceiveStatusWord);
 void J60MotorDataToSendCanData (MotorInformation* Motor, CanFrame* Can);
-void ReceiveCanDataToJ60MotorData (MotorInformation* Motor, CanFrame* Can);
+void ReceiveCanDataToJ60MotorData (MotorInformation* Motor, CanFrame* Can, uint8_t CommandID);
 uint16_t GetJ60MotorCanID (MotorCommandInformation* MotorCommand);
 
 // Give motor command
